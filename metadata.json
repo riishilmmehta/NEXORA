@@ -1,0 +1,6 @@
+{
+  "name": "NEXORA",
+  "description": "Next-generation social platform where ideas evolve into communities, projects, and portfolios.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

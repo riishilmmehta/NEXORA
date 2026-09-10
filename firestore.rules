@@ -1,0 +1,68 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Helper function
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    // Users
+    match /users/{userId} {
+      allow read: if true;
+      allow write: if true;
+    }
+
+    // Posts & Comments
+    match /posts/{postId} {
+      allow read: if true;
+      allow write: if true;
+
+      match /comments/{commentId} {
+        allow read: if true;
+        allow write: if true;
+      }
+    }
+
+    // Spaces
+    match /spaces/{spaceId} {
+      allow read: if true;
+      allow write: if true;
+    }
+
+    // Projects
+    match /projects/{projectId} {
+      allow read: if true;
+      allow write: if true;
+    }
+
+    // Opportunities
+    match /opportunities/{oppId} {
+      allow read: if true;
+      allow write: if true;
+    }
+
+    // Visual Collections
+    match /collections/{collectionId} {
+      allow read: if true;
+      allow write: if true;
+    }
+
+    // Moments (24h ephemeral progress logs)
+    match /moments/{momentId} {
+      allow read: if true;
+      allow write: if true;
+    }
+
+    // Channel Messages
+    match /channelMessages/{messageId} {
+      allow read: if true;
+      allow write: if true;
+    }
+
+    // Notifications
+    match /notifications/{notifId} {
+      allow read: if true;
+      allow write: if true;
+    }
+  }
+}
